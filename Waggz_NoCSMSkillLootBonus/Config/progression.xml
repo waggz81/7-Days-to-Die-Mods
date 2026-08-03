@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<configs>
+    <remove xpath="/progression/perks/perk/effect_group/passive_effect[@name='LootProb' and contains(@tags,'CSM')]/requirement[@name='ProgressionLevel' and @operation='LT']/.."/>
+</configs>
+ 
