@@ -1,0 +1,9 @@
+<configs>
+    <!-- remove all harvest and destroy loot -->
+    <remove xpath="/blocks/block[starts-with(@name, 'decoCarTire') or starts-with(@name, 'decoCarWheel')]/drop[@event='Destroy']" />
+    <remove xpath="/blocks/block[starts-with(@name, 'decoCarTire') or starts-with(@name, 'decoCarWheel')]/drop[@event='Harvest']" />
+    <!-- add destroyed game event -->
+    <append xpath="/blocks/block[starts-with(@name, 'decoCarTire') or starts-with(@name, 'decoCarWheel')]">
+        <property name="DestroyedEvent" value="WaggzWheels" />
+    </append>
+</configs>
