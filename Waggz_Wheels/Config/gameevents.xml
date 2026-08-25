@@ -25,11 +25,11 @@
                         <requirement class="HasBuff">
                             <property name="buff_name" value="waggzHoldingSalvageTool" />
                         </requirement>
-                        <!-- 0-5 -->
+                        <!-- 0-2 -->
                         <requirement class="VarInt">
                             <property name="var_name" value="wheel_drop"/>
                             <property name="operation" value="LTE" />
-                            <property name="value" value="5" />
+                            <property name="value" value="2" />
                         </requirement>
                         <action class="AddItems">
                             <property name="added_items" value="resourceGoldNugget" />
@@ -40,16 +40,16 @@
                         <requirement class="HasBuff">
                             <property name="buff_name" value="waggzHoldingSalvageTool" />
                         </requirement>
-                        <!-- 6-10 -->
+                        <!-- 3-4 -->
                         <requirement class="VarInt">
                             <property name="var_name" value="wheel_drop"/>
                             <property name="operation" value="GT" />
-                            <property name="value" value="5" />
+                            <property name="value" value="2" />
                         </requirement>
                         <requirement class="VarInt">
                             <property name="var_name" value="wheel_drop"/>
                             <property name="operation" value="LTE" />
-                            <property name="value" value="10" />
+                            <property name="value" value="4" />
                         </requirement>
                         <action class="AddItems">
                             <property name="added_items" value="resourceSilverNugget" />
@@ -60,16 +60,16 @@
                         <requirement class="HasBuff">
                             <property name="buff_name" value="waggzHoldingSalvageTool" />
                         </requirement>
-                        <!-- 11-15 -->
+                        <!-- 5-6 -->
                         <requirement class="VarInt">
                             <property name="var_name" value="wheel_drop"/>
                             <property name="operation" value="GT" />
-                            <property name="value" value="10" />
+                            <property name="value" value="4" />
                         </requirement>
                         <requirement class="VarInt">
                             <property name="var_name" value="wheel_drop"/>
                             <property name="operation" value="LTE" />
-                            <property name="value" value="15" />
+                            <property name="value" value="6" />
                         </requirement>
                         <action class="AddItems">
                             <property name="added_items" value="resourceRawDiamond" />
@@ -80,16 +80,16 @@
                         <requirement class="HasBuff">
                             <property name="buff_name" value="waggzHoldingSalvageTool" />
                         </requirement>
-                        <!-- 16-20 --> 
+                        <!-- 7-12 --> 
                         <requirement class="VarInt">
                             <property name="var_name" value="wheel_drop"/>
                             <property name="operation" value="GT" />
-                            <property name="value" value="15" />
+                            <property name="value" value="6" />
                         </requirement>
                         <requirement class="VarInt">
                             <property name="var_name" value="wheel_drop"/>
                             <property name="operation" value="LTE" />
-                            <property name="value" value="20" />
+                            <property name="value" value="12" />
                         </requirement>
                         <action class="AddItems">
                             <property name="added_items" value="vehicleWheels" />
@@ -100,11 +100,11 @@
                         <requirement class="HasBuff">
                             <property name="buff_name" value="waggzHoldingSalvageTool" />
                         </requirement>
-                        <!-- 21-100 -->
+                        <!-- 13-100 -->
                         <requirement class="VarInt">
                             <property name="var_name" value="wheel_drop"/>
                             <property name="operation" value="GT" />
-                            <property name="value" value="20" />
+                            <property name="value" value="12" />
                         </requirement>
                         <action class="AddItems">
                             <property name="added_items" value="resourceScrapPolymers" />
