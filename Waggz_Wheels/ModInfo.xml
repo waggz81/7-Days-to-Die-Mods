@@ -5,5 +5,5 @@
     <Version value="3.2.0.1" /> <!-- (Required) SemVer version of the mod. Has to be in the format major.minor[.build[.revision]] (i.e. build and revision can be left out, recommend using them though as typically done with Semantic Versioning -->
     <Description value="Potentially salvage items from wheels" /> <!-- (Optional) More text to show on UIs -->
     <Author value="Waggz" /> <!-- (Optional) Name(s) of the author(s) -->
-    <Website value="" /> <!-- (Optional) URL of a website of the mod -->
+    <Website value="https://www.nexusmods.com/7daystodie/mods/12211" /> <!-- (Optional) URL of a website of the mod -->
 </xml>

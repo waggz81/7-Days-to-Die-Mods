@@ -1,0 +1,155 @@
+<configs>
+    <append xpath="/gameevents">
+        <action_sequence name="WaggzWheels">
+            <property name="action_type" value="Game"/>
+            <property name="target_type" value="Entity"/>
+            <property name="allow_while_dead" value="false"/>
+            <property name="allow_user_trigger" value="true"/>
+            <loop class="For">
+                <property name="min_loop_count" value="1" />
+                <property name="max_loop_count" value="1" />
+                <property name="phase" value="0" />
+                <!-- roll the dice -->
+                <action class="ModifyVarInt">
+                    <property name="phase" value="0" />
+                    <property name="var_name" value="wheel_drop" />
+                    <property name="value" value="1-100" />
+                    <property name="operation" value="Set" />
+                </action>
+                <!--
+                    in this loop, check to see where the dice landed and also check if holding a salvage tool.
+                    Using GT AND LTE in these to allow for more fine tuning in the probability chances. With 1-100 
+                    and each wheel only selecting a single digit this gives a 1% chance for each wheel. These values 
+                    can be expanded for each individual drop for custom ranges or increase the range in the wheel_drop 
+                    var above to lower below 1%
+                -->
+                <loop class="For">
+                    <property name="min_loop_count" value="1" />
+                    <property name="max_loop_count" value="1" />
+                    <property name="phase" value="1" />
+                    <decision class="If" condition_type="All">
+                        <requirement class="HasBuff">
+                            <property name="buff_name" value="waggzHoldingSalvageTool" />
+                        </requirement>
+                        <!-- 1-1 -->
+                        <requirement class="VarInt">
+                            <property name="var_name" value="wheel_drop"/>
+                            <property name="operation" value="LTE" />
+                            <property name="value" value="1" />
+                        </requirement>
+                        <action class="AddItems">
+                            <property name="added_items" value="ulmResourceMinibikeWheel" />
+                            <property name="added_item_counts" value="1" />
+                        </action>
+                    </decision>
+                    <decision class="If" condition_type="All">
+                        <requirement class="HasBuff">
+                            <property name="buff_name" value="waggzHoldingSalvageTool" />
+                        </requirement>
+                        <!-- 2-2 -->
+                        <requirement class="VarInt">
+                            <property name="var_name" value="wheel_drop"/>
+                            <property name="operation" value="GT" />
+                            <property name="value" value="1" />
+                        </requirement>
+                        <requirement class="VarInt">
+                            <property name="var_name" value="wheel_drop"/>
+                            <property name="operation" value="LTE" />
+                            <property name="value" value="2" />
+                        </requirement>
+                        <action class="AddItems">
+                            <property name="added_items" value="ulmResourceMotorcycleWheel" />
+                            <property name="added_item_counts" value="1" />
+                        </action>
+                    </decision>
+                    <decision class="If" condition_type="All">
+                        <requirement class="HasBuff">
+                            <property name="buff_name" value="waggzHoldingSalvageTool" />
+                        </requirement>
+                        <!-- 3-3 -->
+                        <requirement class="VarInt">
+                            <property name="var_name" value="wheel_drop"/>
+                            <property name="operation" value="GT" />
+                            <property name="value" value="2" />
+                        </requirement>
+                        <requirement class="VarInt">
+                            <property name="var_name" value="wheel_drop"/>
+                            <property name="operation" value="LTE" />
+                            <property name="value" value="3" />
+                        </requirement>
+                        <action class="AddItems">
+                            <property name="added_items" value="ulmResourceCarWheel" />
+                            <property name="added_item_counts" value="1" />
+                        </action>
+                    </decision>
+                    <decision class="If" condition_type="All">
+                        <requirement class="HasBuff">
+                            <property name="buff_name" value="waggzHoldingSalvageTool" />
+                        </requirement>
+                        <!-- 4-4 --> 
+                        <requirement class="VarInt">
+                            <property name="var_name" value="wheel_drop"/>
+                            <property name="operation" value="GT" />
+                            <property name="value" value="3" />
+                        </requirement>
+                        <requirement class="VarInt">
+                            <property name="var_name" value="wheel_drop"/>
+                            <property name="operation" value="LTE" />
+                            <property name="value" value="4" />
+                        </requirement>
+                        <action class="AddItems">
+                            <property name="added_items" value="ulmResourceTruckWheel" />
+                            <property name="added_item_counts" value="1" />
+                        </action>
+                    </decision>
+                    <decision class="If" condition_type="All">
+                        <requirement class="HasBuff">
+                            <property name="buff_name" value="waggzHoldingSalvageTool" />
+                        </requirement>
+                        <!-- 5-5 --> 
+                        <requirement class="VarInt">
+                            <property name="var_name" value="wheel_drop"/>
+                            <property name="operation" value="GT" />
+                            <property name="value" value="4" />
+                        </requirement>
+                        <requirement class="VarInt">
+                            <property name="var_name" value="wheel_drop"/>
+                            <property name="operation" value="LTE" />
+                            <property name="value" value="5" />
+                        </requirement>
+                        <action class="AddItems">
+                            <property name="added_items" value="ulmResourceGyrocopterWheel" />
+                            <property name="added_item_counts" value="1" />
+                        </action>
+                    </decision>
+                    <decision class="If" condition_type="All">
+                        <requirement class="HasBuff">
+                            <property name="buff_name" value="waggzHoldingSalvageTool" />
+                        </requirement>
+                        <!-- 6-100 -->
+                        <requirement class="VarInt">
+                            <property name="var_name" value="wheel_drop"/>
+                            <property name="operation" value="GT" />
+                            <property name="value" value="6" />
+                        </requirement>
+                        <action class="AddItems">
+                            <property name="added_items" value="ulmResourceScrapRubber" />
+                            <property name="added_item_counts" value="12-20" />
+                        </action>
+                    </decision>
+                    <decision class="If">
+                        <!-- no salvage tool used, give smaller amount of polymers -->
+                        <requirement class="HasBuff">
+                            <property name="buff_name" value="waggzHoldingSalvageTool" />
+                            <property name="invert" value="true" />
+                        </requirement>
+                        <action class="AddItems">
+                            <property name="added_items" value="ulmResourceScrapRubber" />
+                            <property name="added_item_counts" value="6-12" />
+                        </action>
+                    </decision>
+                </loop>
+            </loop>
+        </action_sequence>
+    </append>
+</configs>

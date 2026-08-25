@@ -1,0 +1,31 @@
+<configs>
+
+    <!-- start fresh -->
+    <append xpath="/buffs/buff[@name='buffStatusCheck01']/effect_group">
+        <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="waggzHoldingSalvageTool"/>
+    </append>
+
+    <!-- define buff-->
+    <append xpath="/buffs">
+        <buff name="waggzHoldingSalvageTool" icon="server_favorite" hidden="true">
+            <duration value="0"/>
+            <stack_type value="ignore"/>
+        </buff>
+    </append>
+
+    <!-- apply/remove buff on triggers -->
+    <append xpath="/buffs/buff[@name='buffStatusCheck02']">
+        <effect_group>
+            <triggered_effect trigger="onSelfPrimaryActionStart" action="RemoveBuff" buff="waggzHoldingSalvageTool">
+                <requirement name="!HoldingItemHasTags" tags="salvageTool"/>
+            </triggered_effect>
+            <triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="waggzHoldingSalvageTool">
+                <requirement name="!HoldingItemHasTags" tags="salvageTool"/>
+            </triggered_effect>
+            <triggered_effect trigger="onSelfPrimaryActionStart" action="AddBuff" buff="waggzHoldingSalvageTool">
+                <requirement name="HoldingItemHasTags" tags="salvageTool"/>
+            </triggered_effect>
+        </effect_group>
+    </append>
+
+</configs>
