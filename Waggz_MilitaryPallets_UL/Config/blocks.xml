@@ -1,0 +1,8 @@
+<configs>
+    <append xpath="/blocks/block[@name='palletCartonMilitaryBase']">
+        <property name="Class" value="ULM_Loot,UndeadLegacy" />
+        <property name="LootList" value="militaryPallet" />
+        <property name="OpenSound" value="open_chest" />
+        <property name="CloseSound" value="close_chest" />
+    </append>
+</configs>

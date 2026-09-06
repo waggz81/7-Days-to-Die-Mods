@@ -1,0 +1,7 @@
+<configs>
+    <append xpath="/lootcontainers">
+        <lootcontainer name="militaryPallet" count="1" size="5,2" sound_open="UseActions/open_chest" sound_close="silencefiller" loot_quality_template="qualBaseTemplate" destroy_on_close="false">
+            <item group="groupAmmoPileSmall"/>
+        </lootcontainer>
+    </append>
+</configs>
