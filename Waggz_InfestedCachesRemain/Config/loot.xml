@@ -1,0 +1,3 @@
+<configs>
+    <removeattribute xpath="//lootcontainer[starts-with(@name,'infestedT')]/@destroy_on_close"/>
+</configs>
