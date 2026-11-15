@@ -1,0 +1,3 @@
+<configs>
+	<set xpath="/blocks/block[@name='cntTrashPile01']/property[@name='LootList']/@value">junkdestroy</set>
+</configs>
